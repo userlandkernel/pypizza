@@ -325,6 +325,8 @@ class DominosWeb:
 
 if __name__ == "__main__":
 	dominos = DominosWeb(OrderType['delivery'])
-	dominos.SetOrderType()
-	dominos.ProvideCustomerDetails()
-	dominos.SpecifyOrderTime()
+	print(dominos.api.WebVouchers(culture="en", countryCode="nl", storeNo=30894))
+				
+	#dominos.SetOrderType()
+	#dominos.ProvideCustomerDetails()
+	#dominos.SpecifyOrderTime()
