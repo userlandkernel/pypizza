@@ -107,7 +107,7 @@ class DominosAPI:
 
 		if not countryCode:
 			countryCode = self.countryCode
-
+			
 		response = self.s.get(self.base+"/"+countryCode+"/stores/all?region="+region)
 
 		return json.loads(response.content)
@@ -124,9 +124,17 @@ class DominosAPI:
 	def VoucherMenus(self):
 		pass
 
-	def WebVouchers(self):
-		pass
+	def WebVouchers(self, countryCode=None, culture=None):
+		
+		if not countryCode = None:
+			countryCode = self.countryCode
 
+		if not culture:
+			culture = self.culture
+
+		response = self.s.get(self.base+"/"+countryCode+"/webvouchers/"+storeNo+"/"+culture)
+		return json.loads(response.content)
+	
 	def Streets(self):
 		pass
 
