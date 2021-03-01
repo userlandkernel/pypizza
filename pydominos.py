@@ -124,13 +124,16 @@ class DominosAPI:
 	def VoucherMenus(self):
 		pass
 
-	def WebVouchers(self, countryCode=None, culture=None):
+	def WebVouchers(self, countryCode=None, culture=None, storeNo=None):
 		
 		if not countryCode = None:
 			countryCode = self.countryCode
 
 		if not culture:
 			culture = self.culture
+			
+		if not storeNo:
+			storeNo = self.storeNo
 
 		response = self.s.get(self.base+"/"+countryCode+"/webvouchers/"+storeNo+"/"+culture)
 		return json.loads(response.content)
